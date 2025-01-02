@@ -10,7 +10,6 @@
   <h1>Pet Store</h1>
   <a href="/pets/new">Add New Pet</a>
   <form action="/pets" method="get">
-    <!-- Dropdown for page selection -->
     <label for="page">Select Page:</label>
     <select name="page" id="page" onchange="this.form.submit()">
       <% for (let i = 0; i < pageNumbers.length; i++) { %>
