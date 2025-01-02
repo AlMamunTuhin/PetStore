@@ -3,20 +3,14 @@ import validatePetInputs from '../middlewares/validate.js';
 
 const petController = {
   getAllPets: async (req, res) => {
-    const page = parseInt(req.query.page, 10) || 1; // Current page number, default is 1
-    const limit = 30; // Number of pets per page
-    const offset = (page - 1) * limit; // Calculate offset
-  
-    // Fetch paginated pets
+    const page = parseInt(req.query.page, 10) || 1; 
+    const limit = 30; 
+    const offset = (page - 1) * limit; 
     const result = await pool.query('SELECT * FROM pets ORDER BY id LIMIT $1 OFFSET $2', [limit, offset]);
-  
-    // Fetch total count for calculating total pages
     const countResult = await pool.query('SELECT COUNT(*) FROM pets');
     const totalPets = parseInt(countResult.rows[0].count, 10);
     const totalPages = Math.ceil(totalPets / limit);
-
     const pageNumbers = [];
-
     for (let i = 1; i <= totalPages; i++) {
       pageNumbers.push(i);
     }
