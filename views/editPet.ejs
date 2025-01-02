@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Pet</title>
+  <link rel="stylesheet" href="../../sty.css">
+</head>
+<body>
+  <h1>Edit Pet</h1>
+  <form action="/pets/<%= pet.id %>?_method=PUT" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" name="name" value="<%= pet.name %>" required><br><br>
+    
+    <label for="species">Species:</label>
+    <input type="text" name="species" value="<%= pet.species %>" required><br><br>
+    
+    <label for="age">Age:</label>
+    <input type="number" name="age" value="<%= pet.age %>" required><br><br>
+    
+    <label for="breed">Breed:</label>
+    <input type="text" name="breed" value="<%= pet.breed || '' %>" required><br><br>
+    
+    <label for="gender">Gender:</label>
+    <input type="text" name="gender" value="<%= pet.gender || '' %>" required><br><br>
+    
+    <label for="status">Status:</label>
+    <select name="status" required>
+      <option value="available" <%= pet.status === 'available' ? 'selected' : '' %>>Available</option>
+      <option value="sold" <%= pet.status === 'sold' ? 'selected' : '' %>>Sold</option>
+      <option value="under treatment" <%= pet.status === 'under treatment' ? 'selected' : '' %>>Under Treatment</option>
+    </select><br><br>
+    
+    <button type="submit">Update Pet</button>
+  </form>
+  <a href="/pets/<%= pet.id %>">Back to Details</a>
+</body>
+</html>

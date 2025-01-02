@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add a Pet</title>
+  <link rel="stylesheet" href="../sty.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Add a New Pet</h1>
+    <form action="/pets" method="POST">
+      <div class="form-group">
+        <label for="name">Pet Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="species">Species:</label>
+        <input type="text" id="species" name="species" required>
+      </div>
+
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="0" required>
+      </div>
+
+      <div class="form-group">
+        <label for="breed">Breed:</label>
+        <input type="text" id="breed" name="breed" required>
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+          <option value="">Select</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="status">Status:</label>
+        <select id="status" name="status" required>
+          <option value="Available">Available</option>
+          <option value="Sold">Sold</option>
+          <option value="Under Treatment">Under Treatment</option>
+        </select>
+      </div>
+
+      <button type="submit">Add Pet</button>
+    </form>
+    <a href="/pets">Back to Pet List</a>
+  </div>
+</body>
+</html>

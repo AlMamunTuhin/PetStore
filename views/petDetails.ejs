@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Details</title>
+  <link rel="stylesheet" href="../../sty.css">
+</head>
+<body>
+  <h1>Pet Details</h1>
+  <p>Name: <%= pet.name %></p>
+  <p>Species: <%= pet.species %></p>
+  <p>Age: <%= pet.age %> years</p>
+  <p>Breed: <%= pet.breed || 'N/A' %></p>
+  <p>Gender: <%= pet.gender || 'N/A' %></p>
+  <p>Status: <%= pet.status %></p>
+  <a href="/pets">Back to Inventory</a>
+</body>
+</html>

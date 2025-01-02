@@ -1,0 +1,173 @@
+/* General Styles */
+body {
+   font-family: 'Arial', sans-serif;
+   margin: 0;
+   padding: 0;
+   background-color: #f7f7f7;
+   color: #333;
+ }
+ 
+ .container {
+   max-width: 800px;
+   margin: 30px auto;
+   background: #ffffff;
+   padding: 20px;
+   border-radius: 8px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ }
+ 
+ /* Header */
+ h1, h2 {
+   text-align: center;
+   color: #444;
+   margin-bottom: 20px;
+ }
+ 
+ /* Form Styles (for addPet.ejs & editPet.ejs) */
+ form {
+   display: flex;
+   flex-direction: column;
+ }
+ 
+ .form-group {
+   margin-bottom: 15px;
+ }
+ 
+ label {
+   font-weight: bold;
+   margin-bottom: 5px;
+   display: block;
+ }
+ 
+ input,
+ select,
+ textarea {
+   width: 100%;
+   padding: 10px;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   font-size: 16px;
+ }
+ 
+ input:focus,
+ select:focus,
+ textarea:focus {
+   border-color: #007bff;
+   outline: none;
+   box-shadow: 0 0 4px rgba(0, 123, 255, 0.25);
+ }
+ 
+ button {
+   padding: 10px 15px;
+   background-color: #007bff;
+   color: white;
+   border: none;
+   border-radius: 4px;
+   font-size: 16px;
+   cursor: pointer;
+   margin-top: 10px;
+ }
+ 
+ button:hover {
+   background-color: #0056b3;
+ }
+ 
+ /* Table Styles (for viewPets.ejs) */
+ table {
+   width: 100%;
+   border-collapse: collapse;
+   margin: 20px 0;
+   background: #fff;
+ }
+ 
+ table th,
+ table td {
+   text-align: left;
+   padding: 10px;
+   border: 1px solid #ddd;
+ }
+ 
+ table th {
+   background-color: #007bff;
+   color: white;
+ }
+ 
+ table tr:nth-child(even) {
+   background-color: #f2f2f2;
+ }
+ 
+ table tr:hover {
+   background-color: #f1f1f1;
+ }
+ 
+ /* Pet Details (for petDetails.ejs) */
+ .pet-details {
+   margin: 20px 0;
+   padding: 15px;
+   background: #fafafa;
+   border: 1px solid #ddd;
+   border-radius: 4px;
+ }
+ 
+ .pet-details p {
+   margin: 10px 0;
+   font-size: 16px;
+   line-height: 1.5;
+ }
+ 
+ .pet-details span {
+   font-weight: bold;
+   color: #555;
+ }
+ 
+ /* Links */
+ a {
+   display: inline-block;
+   text-align: center;
+   color: #007bff;
+   text-decoration: none;
+   margin: 10px 0;
+ }
+ 
+ a:hover {
+   text-decoration: underline;
+ }
+ 
+ /* Navigation Buttons */
+ .nav-buttons {
+   display: flex;
+   justify-content: space-between;
+ }
+ 
+ .nav-buttons a {
+   padding: 10px 15px;
+   border: 1px solid #007bff;
+   border-radius: 4px;
+   color: #007bff;
+   background-color: white;
+   text-decoration: none;
+ }
+ 
+ .nav-buttons a:hover {
+   background-color: #007bff;
+   color: white;
+ }
+ 
+ /* Responsive Design */
+ @media (max-width: 768px) {
+   .container {
+     padding: 15px;
+   }
+ 
+   table th,
+   table td {
+     font-size: 14px;
+   }
+ 
+   input,
+   select,
+   textarea {
+     font-size: 14px;
+   }
+ }
+ 

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Store Management</title>
+  <link rel="stylesheet" href="../sty.css">
+</head>
+<body>
+  <h1>Pet Store Inventory</h1>
+  <a href="/pets/new">Add New Pet</a>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Species</th>
+        <th>Age</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% pets.forEach(pet => { %>
+        <tr>
+          <td><%= pet.name %></td>
+          <td><%= pet.species %></td>
+          <td><%= pet.age %></td>
+          <td><%= pet.status %></td>
+          <td>
+            <a href="/pets/<%= pet.id %>">View</a>
+            <a href="/pets/<%= pet.id %>/edit">Edit</a>
+            <form action="/pets/<%= pet.id %>?_method=DELETE" method="POST" style="display:inline;">
+              <button type="submit">Delete</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>
