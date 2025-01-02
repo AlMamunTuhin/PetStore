@@ -5,6 +5,26 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+ul {
+  list-style: none;
+  display: flex;
+  gap: 5px;
+}
+
+ul li a {
+  padding: 5px 10px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  color: #333;
+}
+
+ul li a.active {
+  background-color: #007BFF;
+  color: white;
+  border-color: #007BFF;
+}
+
+
 :root {
   --primary-color: #4a90e2;
   --secondary-color: #2c3e50;

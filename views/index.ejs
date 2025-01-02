@@ -7,8 +7,19 @@
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-  <h1>Pet Store Inventory</h1>
+  <h1>Pet Store</h1>
   <a href="/pets/new">Add New Pet</a>
+  <form action="/pets" method="get">
+    <!-- Dropdown for page selection -->
+    <label for="page">Select Page:</label>
+    <select name="page" id="page" onchange="this.form.submit()">
+      <% for (let i = 0; i < pageNumbers.length; i++) { %>
+        <option value="<%= pageNumbers[i] %>" <%= pageNumbers[i] === currentPage ? 'selected' : '' %> >
+          Page <%= pageNumbers[i] %>
+        </option>
+      <% } %>
+    </select>
+  </form>
   <table border="1">
     <thead>
       <tr>
@@ -37,5 +48,14 @@
       <% }) %>
     </tbody>
   </table>
+  <div>
+    <% if (currentPage > 1) { %>
+      <a href="?page=<%= currentPage - 1 %>">Previous</a>
+    <% } %>
+    
+    <% if (currentPage < totalPages) { %>
+      <a href="?page=<%= currentPage + 1 %>">Next</a>
+    <% } %>
+  </div>  
 </body>
 </html>
